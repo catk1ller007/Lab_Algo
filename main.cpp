@@ -6,7 +6,7 @@ using namespace std;
 
 
 int main() {
-	std::cout << "AVLSort:";
+	/*std::cout << "AVLSort:";
 	testAVLSort();
 
 	std::cout << "QuickSort:";
@@ -28,7 +28,11 @@ int main() {
 	testRandQuickSortDic_Sort();
 
 	std::cout << "RandAVLDic_Sort:";
-	testRandAVLDic_Sort();
+	testRandAVLDic_Sort();*/
+
+	/*autoTestChangeSizeQuickSort();*/
+
+	autoTestChangeSizeAVLSort();
 
 	return 0;
 }
