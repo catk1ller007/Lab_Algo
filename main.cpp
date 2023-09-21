@@ -30,9 +30,20 @@ int main() {
 	std::cout << "RandAVLDic_Sort:";
 	testRandAVLDic_Sort();*/
 
-	/*autoTestChangeSizeQuickSort();*/
+	/*autoTestChangeSizeQuickSort();
 
 	autoTestChangeSizeAVLSort();
+
+	autoTestChangeSizeAVLSortIncSort();
+
+	autoTestChangeSizeAVLSortDicSort();
+
+	autoTestChangeSizeQuickSortDicSort();
+
+	autoTestChangeSizeQuickSortIncSort();*/
+
+	autoTestChangeValueQuickSortDicSort();
+
 
 	return 0;
 }

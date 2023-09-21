@@ -51,7 +51,7 @@ void testRandomAVLSort() {
 	std::cout << std::endl;
 }
 
-void testRandAVLInc_Sort() {
+void testRandAVLIncSort() {
 	std::cout << std::endl;
 
 	IntegerGenerator generator(-1000, 1000);
@@ -70,7 +70,7 @@ void testRandAVLInc_Sort() {
 	std::cout << std::endl;
 }
 
-void testRandAVLDic_Sort() {
+void testRandAVLDicSort() {
 	std::cout << std::endl;
 
 	IntegerGenerator generator(-1000, 1000);
@@ -89,20 +89,18 @@ void testRandAVLDic_Sort() {
 	std::cout << std::endl;
 }
 
+//--------------------------AVL CHANGE SIZE-------------------//
+
 int64_t testChangeSizeAVLSort(size_t size, int64_t minValue, int64_t maxValue) {
 	IntegerGenerator generator(minValue, maxValue);
 	std::vector<int64_t> elems(size);
 
 	for (auto& elem : elems) elem = generator.generate();
-	std::vector<int64_t> arr(elems);
-	std::sort(elems.begin(), elems.end());
 	
 	TIMER_START(timer, tmr::millisecond_t);
-	AVLsort(arr);
-	int64_t result = TIMER_GET(timer);
-	std::cout << (arr == elems) << ' ';
+	AVLsort(elems);
 
-	return result;
+	return TIMER_GET(timer);;
 }
 
 void autoTestChangeSizeAVLSort() {
@@ -111,6 +109,125 @@ void autoTestChangeSizeAVLSort() {
 	for (size_t size = 1; size <= 1'000'001; size += 10'000) {
 		result = testChangeSizeAVLSort(size, 0, 1'000'000'000);
 		std::cout << size << ' ' << result << '\n';
+	}
+
+}
+
+
+int64_t testChangeSizeAVLSortIncSort(size_t size, int64_t minValue, int64_t maxValue) {
+	IntegerGenerator generator(minValue, maxValue);
+	std::vector<int64_t> elems(size);
+
+	for (auto& elem : elems) elem = generator.generate();
+
+	std::sort(elems.begin(), elems.end());
+	TIMER_START(timer, tmr::millisecond_t);
+	AVLsort(elems);
+
+	return TIMER_GET(timer);;
+}
+
+void autoTestChangeSizeAVLSortIncSort() {
+	int64_t result = 0;
+
+	for (size_t size = 1; size <= 1'000'001; size += 10'000) {
+		result = testChangeSizeAVLSortIncSort(size, 0, 1'000'000'000);
+		std::cout << size << ' ' << result << '\n';
+	}
+
+}
+
+
+int64_t testChangeSizeAVLSortDicSort(size_t size, int64_t minValue, int64_t maxValue) {
+	IntegerGenerator generator(minValue, maxValue);
+	std::vector<int64_t> elems(size);
+
+	for (auto& elem : elems) elem = generator.generate();
+
+	std::sort(elems.rbegin(), elems.rend());
+	TIMER_START(timer, tmr::millisecond_t);
+	AVLsort(elems);
+
+	return TIMER_GET(timer);;
+}
+
+void autoTestChangeSizeAVLSortDicSort() {
+	int64_t result = 0;
+
+	for (size_t size = 1; size <= 1'000'001; size += 10'000) {
+		result = testChangeSizeAVLSortDicSort(size, 0, 1'000'000'000);
+		std::cout << size << ' ' << result << '\n';
+	}
+
+}
+
+//--------------------------AVL CHANGE VALUE-------------------------//
+int64_t testChangeValueAVLSort(size_t size, int64_t minValue, int64_t maxValue) {
+	IntegerGenerator generator(minValue, maxValue);
+	std::vector<int64_t> elems(size);
+
+	for (auto& elem : elems) elem = generator.generate();
+
+	TIMER_START(timer, tmr::millisecond_t);
+	AVLsort(elems);
+
+	return TIMER_GET(timer);;
+}
+
+void autoTestChangeValueAVLSort() {
+	int64_t result = 0;
+
+	for (size_t value = 1; value <= 100; value++) {
+		result = testChangeValueAVLSort(1'000'000, 1, value);
+		std::cout << value << ' ' << result << '\n';
+	}
+
+}
+
+
+int64_t testChangeValueAVLSortIncSort(size_t size, int64_t minValue, int64_t maxValue) {
+	IntegerGenerator generator(minValue, maxValue);
+	std::vector<int64_t> elems(size);
+
+	for (auto& elem : elems) elem = generator.generate();
+
+	std::sort(elems.begin(), elems.end());
+	TIMER_START(timer, tmr::millisecond_t);
+	AVLsort(elems);
+
+	return TIMER_GET(timer);;
+}
+
+void autoTestChangeValueAVLSortIncSort() {
+	int64_t result = 0;
+
+	for (size_t value = 1; value <= 100; value++) {
+		result = testChangeValueAVLSortIncSort(1'000'000, 1, value);
+		std::cout << value << ' ' << result << '\n';
+	}
+
+}
+
+
+int64_t testChangeValueAVLSortDicSort(size_t size, int64_t minValue, int64_t maxValue) {
+	IntegerGenerator generator(minValue, maxValue);
+	std::vector<int64_t> elems(size);
+
+	for (auto& elem : elems) elem = generator.generate();
+
+	std::sort(elems.rbegin(), elems.rend());
+	TIMER_START(timer, tmr::millisecond_t);
+	AVLsort(elems);
+
+	return TIMER_GET(timer);;
+}
+
+void autoTestChangeValueAVLSortDicSort() {
+	int64_t result = 0;
+
+	for (size_t value = 1; value <= 100; value++) {
+		result = testChangeValueAVLSortDicSort(1'000'000, 1, value);
+		std::cout << value << ' ' << result << '\n';
 	}
 
 }
@@ -151,7 +268,7 @@ void testRandomQuickSort() {
 	std::cout << std::endl;
 }
 
-void testRandQuickSortInc_Sort() {
+void testRandQuickSortIncSort() {
 	std::cout << std::endl;
 
 	IntegerGenerator generator(-1000, 1000);
@@ -170,7 +287,7 @@ void testRandQuickSortInc_Sort() {
 	std::cout << std::endl;
 }
 
-void testRandQuickSortDic_Sort() {
+void testRandQuickSortDicSort() {
 	std::cout << std::endl;
 
 	IntegerGenerator generator(-1000, 1000);
@@ -188,6 +305,8 @@ void testRandQuickSortDic_Sort() {
 
 	std::cout << std::endl;
 }
+
+//---------------------------QUICK CHANGE SIZE--------------------//
 
 int64_t testChangeSizeQuickSort(size_t size, int64_t minValue, int64_t maxValue) {
 	IntegerGenerator generator(minValue, maxValue);
@@ -208,6 +327,121 @@ void autoTestChangeSizeQuickSort(){
 		std::cout << size << ' ' << result << '\n';
 	}
 	
+}
+
+
+int64_t testChangeSizeQuickSortIncSort(size_t size, int64_t minValue, int64_t maxValue) {
+	IntegerGenerator generator(minValue, maxValue);
+	std::vector<int64_t> elems(size);
+
+	for (auto& elem : elems) elem = generator.generate();
+
+	std::sort(elems.begin(), elems.end());
+	TIMER_START(timer, tmr::millisecond_t);
+	quickSort(elems, 0, elems.size() - 1);
+
+	return TIMER_GET(timer);;
+}
+
+void autoTestChangeSizeQuickSortIncSort() {
+	int64_t result = 0;
+
+	for (size_t size = 1; size <= 1'000'001; size += 10'000) {
+		result = testChangeSizeQuickSortIncSort(size, 0, 1'000'000'000);
+		std::cout << size << ' ' << result << '\n';
+	}
+
+}
+
+
+int64_t testChangeSizeQuickSortDicSort(size_t size, int64_t minValue, int64_t maxValue) {
+	IntegerGenerator generator(minValue, maxValue);
+	std::vector<int64_t> elems(size);
+
+	for (auto& elem : elems) elem = generator.generate();
+
+	std::sort(elems.rbegin(), elems.rend());
+	TIMER_START(timer, tmr::millisecond_t);
+	quickSort(elems, 0, elems.size() - 1);
+
+	return TIMER_GET(timer);;
+}
+
+void autoTestChangeSizeQuickSortDicSort() {
+	int64_t result = 0;
+
+	for (size_t size = 1; size <= 1'000'001; size += 10'000) {
+		result = testChangeSizeQuickSortDicSort(size, 0, 1'000'000'000);
+		std::cout << size << ' ' << result << '\n';
+	}
+
+}
+
+//--------------------------QUICK CHANGE VALUE-------------------------//
+int64_t testChangeValueQuickSort(size_t size, int64_t minValue, int64_t maxValue) {
+	IntegerGenerator generator(minValue, maxValue);
+	std::vector<int64_t> elems(size);
+
+	for (auto& elem : elems) elem = generator.generate();
+
+	TIMER_START(timer, tmr::millisecond_t);
+	quickSort(elems, 0, elems.size() - 1);
+	return TIMER_GET(timer);
+}
+
+void autoTestChangeValueQuickSort() {
+	int64_t result = 0;
+
+	for (size_t value = 1; value <= 100; value++) {
+		result = testChangeValueQuickSort(1'000'000, 1, value);
+		std::cout << value << ' ' << result << '\n';
+	}
+}
+
+
+int64_t testChangeValueQuickSortIncSort(size_t size, int64_t minValue, int64_t maxValue) {
+	IntegerGenerator generator(minValue, maxValue);
+	std::vector<int64_t> elems(size);
+
+	for (auto& elem : elems) elem = generator.generate();
+
+	std::sort(elems.begin(), elems.end());
+	TIMER_START(timer, tmr::millisecond_t);
+	quickSort(elems, 0, elems.size() - 1);
+
+	return TIMER_GET(timer);;
+}
+
+void autoTestChangeValueQuickSortIncSort() {
+	int64_t result = 0;
+
+	for (size_t value = 1; value <= 100; value++) {
+		result = testChangeValueQuickSortIncSort(1'000'000, 1, value);
+		std::cout << value << ' ' << result << '\n';
+	}
+}
+
+
+int64_t testChangeValueQuickSortDicSort(size_t size, int64_t minValue, int64_t maxValue) {
+	IntegerGenerator generator(minValue, maxValue);
+	std::vector<int64_t> elems(size);
+
+	for (auto& elem : elems) elem = generator.generate();
+
+	std::sort(elems.rbegin(), elems.rend());
+	TIMER_START(timer, tmr::millisecond_t);
+	quickSort(elems, 0, elems.size() - 1);
+
+	return TIMER_GET(timer);;
+}
+
+void autoTestChangeValueQuickSortDicSort() {
+	int64_t result = 0;
+
+	for (size_t value = 1; value <= 100; value++) {
+		result = testChangeValueQuickSortDicSort(1'000'000, 1, value);
+		std::cout << value << ' ' << result << '\n';
+	}
 }
 
 #endif // TESTS_H
