@@ -8,4 +8,4 @@ namespace traits {
 	constexpr bool is_any_of_v = (std::is_same_v<T, Types> || ...);
 }
 
-#endif  // _TRAITS_HPP_
+#endif  // _TRAITS_H

@@ -60,4 +60,4 @@ namespace tmr {
     }
 }  // namespace tmr
 
-#endif  // _TIMER_HPP_
+#endif  // _TIMER_H

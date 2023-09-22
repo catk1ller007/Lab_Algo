@@ -1,5 +1,5 @@
-#ifndef Algorithms
-#define Algorithms
+#ifndef Algorithms_H
+#define Algorithms_H
 
 
 #include <vector>
@@ -41,6 +41,6 @@ void quickSort(std::vector<int64_t>& arr, int64_t left, int64_t right)
 
 
 
-#endif // Algorithms
+#endif // Algorithms_H
 
 
