@@ -13,30 +13,56 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Algorithms">
+      <UniqueIdentifier>{804c4723-03c9-42a3-858e-2ce9a5466368}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AVL">
+      <UniqueIdentifier>{e420bd58-82ad-488a-adbc-e81feeb2b2f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers">
+      <UniqueIdentifier>{a441d8fd-0a01-44fa-8eea-a82760bdb031}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{4a8e7011-d1dc-4db1-9656-fb4784a6817e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="AVL.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>AVL</Filter>
+    </ClCompile>
+    <ClCompile Include="AVL.cpp">
+      <Filter>AVL</Filter>
+    </ClCompile>
+    <ClCompile Include="Algoritms.cpp">
+      <Filter>Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>Tests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Tests.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="timer.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="traits.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="Algorithms.h">
+      <Filter>Algorithms</Filter>
     </ClInclude>
     <ClInclude Include="Generator.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="Algorithms.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="timer.h">
+      <Filter>headers</Filter>
     </ClInclude>
+    <ClInclude Include="traits.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Tests.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
   </ItemGroup>
 </Project>
