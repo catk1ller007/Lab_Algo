@@ -4,6 +4,8 @@
 #include "Algorithms.h"
 #include "timer.h"
 #include "Generator.h"
+#include <iostream>
+#include <fstream>
 
 template<typename T>
 void printVector(const std::vector<T>& elems)
@@ -106,11 +108,14 @@ int64_t testChangeSizeAVLSort(size_t size, int64_t minValue, int64_t maxValue) {
 void autoTestChangeSizeAVLSort() {
 	int64_t result = 0;
 
+	std::fstream file(std::string(".\\TestChangeSizeAVLSortNoSort.txt"), std::fstream::out);
+
 	for (size_t size = 1; size <= 1'000'001; size += 10'000) {
 		result = testChangeSizeAVLSort(size, 0, 1'000'000'000);
+		file << size << ' ' << result << '\n';
 		std::cout << size << ' ' << result << '\n';
 	}
-
+	file.close();
 }
 
 
@@ -130,11 +135,14 @@ int64_t testChangeSizeAVLSortIncSort(size_t size, int64_t minValue, int64_t maxV
 void autoTestChangeSizeAVLSortIncSort() {
 	int64_t result = 0;
 
+	std::fstream file(std::string(".\\TestChangeSizeAVLSortIncSort.txt"), std::fstream::out);
+
 	for (size_t size = 1; size <= 1'000'001; size += 10'000) {
 		result = testChangeSizeAVLSortIncSort(size, 0, 1'000'000'000);
+		file << size << ' ' << result << '\n';
 		std::cout << size << ' ' << result << '\n';
 	}
-
+	file.close();
 }
 
 
@@ -154,11 +162,14 @@ int64_t testChangeSizeAVLSortDicSort(size_t size, int64_t minValue, int64_t maxV
 void autoTestChangeSizeAVLSortDicSort() {
 	int64_t result = 0;
 
+	std::fstream file(std::string(".\\TestChangeSizeAVLSortDicSort.txt"), std::fstream::out);
+
 	for (size_t size = 1; size <= 1'000'001; size += 10'000) {
 		result = testChangeSizeAVLSortDicSort(size, 0, 1'000'000'000);
+		file << size << ' ' << result << '\n';
 		std::cout << size << ' ' << result << '\n';
 	}
-
+	file.close();
 }
 
 //--------------------------AVL CHANGE VALUE-------------------------//
@@ -177,11 +188,14 @@ int64_t testChangeValueAVLSort(size_t size, int64_t minValue, int64_t maxValue) 
 void autoTestChangeValueAVLSort() {
 	int64_t result = 0;
 
+	std::fstream file(std::string(".\\TestChangeValueAVLSortNoSort.txt"), std::fstream::out);
+
 	for (size_t value = 1; value <= 100; value++) {
 		result = testChangeValueAVLSort(1'000'000, 1, value);
+		file << value << ' ' << result << '\n';
 		std::cout << value << ' ' << result << '\n';
 	}
-
+	file.close();
 }
 
 
@@ -201,11 +215,14 @@ int64_t testChangeValueAVLSortIncSort(size_t size, int64_t minValue, int64_t max
 void autoTestChangeValueAVLSortIncSort() {
 	int64_t result = 0;
 
+	std::fstream file(std::string(".\\TestChangeValueAVLSortIncSort.txt"), std::fstream::out);
+
 	for (size_t value = 1; value <= 100; value++) {
 		result = testChangeValueAVLSortIncSort(1'000'000, 1, value);
+		file << value << ' ' << result << '\n';
 		std::cout << value << ' ' << result << '\n';
 	}
-
+	file.close();
 }
 
 
@@ -225,11 +242,14 @@ int64_t testChangeValueAVLSortDicSort(size_t size, int64_t minValue, int64_t max
 void autoTestChangeValueAVLSortDicSort() {
 	int64_t result = 0;
 
+	std::fstream file(std::string(".\\TestChangeValueAVLSortDicSort.txt"), std::fstream::out);
+
 	for (size_t value = 1; value <= 100; value++) {
 		result = testChangeValueAVLSortDicSort(1'000'000, 1, value);
+		file << value << ' ' << result << '\n';
 		std::cout << value << ' ' << result << '\n';
 	}
-
+	file.close();
 }
 
 //---------------------------QUICK SORT----------------------//
@@ -322,11 +342,15 @@ int64_t testChangeSizeQuickSort(size_t size, int64_t minValue, int64_t maxValue)
 void autoTestChangeSizeQuickSort(){
 	int64_t result = 0;
 
+	std::fstream file(std::string(".\\TestChangeSizeQuickSortNoSort.txt"), std::fstream::out);
+
+
 	for (size_t size = 1; size <= 1'000'001; size += 10'000) {
 		result = testChangeSizeQuickSort(size, 0, 1'000'000'000);
+		file << size << ' ' << result << '\n';
 		std::cout << size << ' ' << result << '\n';
 	}
-	
+	file.close();
 }
 
 
@@ -346,11 +370,14 @@ int64_t testChangeSizeQuickSortIncSort(size_t size, int64_t minValue, int64_t ma
 void autoTestChangeSizeQuickSortIncSort() {
 	int64_t result = 0;
 
+	std::fstream file(std::string(".\\TestChangeSizeQuickSortIncSort.txt"), std::fstream::out);
+
 	for (size_t size = 1; size <= 1'000'001; size += 10'000) {
 		result = testChangeSizeQuickSortIncSort(size, 0, 1'000'000'000);
+		file << size << ' ' << result << '\n';
 		std::cout << size << ' ' << result << '\n';
 	}
-
+	file.close();
 }
 
 
@@ -370,11 +397,15 @@ int64_t testChangeSizeQuickSortDicSort(size_t size, int64_t minValue, int64_t ma
 void autoTestChangeSizeQuickSortDicSort() {
 	int64_t result = 0;
 
+	std::fstream file(std::string(".\\TestChangeSizeQuickSortDicSort.txt"), std::fstream::out);
+
+
 	for (size_t size = 1; size <= 1'000'001; size += 10'000) {
 		result = testChangeSizeQuickSortDicSort(size, 0, 1'000'000'000);
+		file << size << ' ' << result << '\n';
 		std::cout << size << ' ' << result << '\n';
 	}
-
+	file.close();
 }
 
 //--------------------------QUICK CHANGE VALUE-------------------------//
@@ -392,10 +423,14 @@ int64_t testChangeValueQuickSort(size_t size, int64_t minValue, int64_t maxValue
 void autoTestChangeValueQuickSort() {
 	int64_t result = 0;
 
+	std::fstream file(std::string(".\\TestChangeValueQuickSortNoSort.txt"), std::fstream::out);
+
 	for (size_t value = 1; value <= 100; value++) {
 		result = testChangeValueQuickSort(1'000'000, 1, value);
+		file << value << ' ' << result << '\n';
 		std::cout << value << ' ' << result << '\n';
 	}
+	file.close();
 }
 
 
@@ -415,10 +450,14 @@ int64_t testChangeValueQuickSortIncSort(size_t size, int64_t minValue, int64_t m
 void autoTestChangeValueQuickSortIncSort() {
 	int64_t result = 0;
 
+	std::fstream file(std::string(".\\TestChangeValueQuickSortIncSort.txt"), std::fstream::out);
+
 	for (size_t value = 1; value <= 100; value++) {
 		result = testChangeValueQuickSortIncSort(1'000'000, 1, value);
+		file << value << ' ' << result << '\n';
 		std::cout << value << ' ' << result << '\n';
 	}
+	file.close();
 }
 
 
@@ -438,10 +477,16 @@ int64_t testChangeValueQuickSortDicSort(size_t size, int64_t minValue, int64_t m
 void autoTestChangeValueQuickSortDicSort() {
 	int64_t result = 0;
 
+	std::fstream file(std::string(".\\TestChangeValueQuickSortDicSort.txt"), std::fstream::out);
+
 	for (size_t value = 1; value <= 100; value++) {
 		result = testChangeValueQuickSortDicSort(1'000'000, 1, value);
+		file << value << ' ' << result << '\n';
 		std::cout << value << ' ' << result << '\n';
 	}
+	file.close();
 }
+
+
 
 #endif // TESTS_H
