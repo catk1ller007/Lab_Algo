@@ -1,5 +1,0 @@
-﻿  Проверка источников на наличие зависимостей модуля…
-  main.cpp
-C:\Users\kylae\Desktop\Программирование\Laba3_graphicRedaktor\ConsoleApplication1\ConsoleApplication1\AVL.h(44,17): warning C4244: аргумент: преобразование "const __int64" в "int", возможна потеря данных
-C:\Users\kylae\Desktop\Программирование\Laba3_graphicRedaktor\ConsoleApplication1\ConsoleApplication1\AVL.h(100,3): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
-  ConsoleApplication1.vcxproj -> C:\Users\kylae\Desktop\Программирование\Laba3_graphicRedaktor\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe

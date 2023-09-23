@@ -1,0 +1,6 @@
+C:/Users/kylae/Desktop/Proga3Kurs/Lab_Algo/CMakeFiles/algs_lib.dir
+C:/Users/kylae/Desktop/Proga3Kurs/Lab_Algo/CMakeFiles/tests_lib.dir
+C:/Users/kylae/Desktop/Proga3Kurs/Lab_Algo/CMakeFiles/avl_lib.dir
+C:/Users/kylae/Desktop/Proga3Kurs/Lab_Algo/CMakeFiles/lab_alg.dir
+C:/Users/kylae/Desktop/Proga3Kurs/Lab_Algo/CMakeFiles/ALL_BUILD.dir
+C:/Users/kylae/Desktop/Proga3Kurs/Lab_Algo/CMakeFiles/ZERO_CHECK.dir

@@ -14,13 +14,13 @@ int main() {
 
 	autoTestChangeSizeAVLSortDicSort();
 
+
 	//----------------AVL Change Value-------------------//
 	autoTestChangeValueAVLSort();
 
 	autoTestChangeValueAVLSortIncSort();
 
 	autoTestChangeValueAVLSortDicSort();
-
 
 
 	//----------------QuickSort Change Size--------------------//
