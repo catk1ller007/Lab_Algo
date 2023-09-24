@@ -88,16 +88,24 @@ Node* AVLtree::rotateLeft(Node* node) {
 
 Node* AVLtree::insertNode(Node*& node, int64_t key) {
   if (node == nullptr) {
-    ++mCount;
-    ++mSize;
-    return new Node(key, 0, 1);
-  }
+		Node* newNode = new Node();
+		newNode->key = key;
+		newNode->left = nullptr;
+		newNode->right = nullptr;
+		newNode->height = 1;
+		newNode->count = 1;
+		mCount++;
+		mSize++;
+		return newNode;
+	}
 
   if (key < node->key) {
     node->left = insertNode(node->left, key);
-  } else if (key > node->key) {
+  } 
+  else if (key > node->key) {
     node->right = insertNode(node->right, key);
-  } else {
+  } 
+  else {
     node->count += 1;
     mCount++;
     return node;
@@ -147,9 +155,11 @@ Node* AVLtree::removeNode(Node*& node, int64_t key) {
 
   if (key < node->key) {
     node->left = removeNode(node->left, key);
-  } else if (key > node->key) {
+  } 
+  else if (key > node->key) {
     node->right = removeNode(node->right, key);
-  } else {
+  } 
+  else {
     if (node->left == nullptr || node->right == nullptr) {
       Node* temp = node->left ? node->left : node->right;
 
@@ -161,7 +171,8 @@ Node* AVLtree::removeNode(Node*& node, int64_t key) {
       }
 
       delete temp;
-    } else {
+    } 
+    else {
       Node* temp = getMinValueNode(node->right);
       node->key = temp->key;
       node->right = removeNode(node->right, temp->key);
